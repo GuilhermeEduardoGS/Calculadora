@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Bases</title>
+    <script src="scriptConversor.js" defer></script>
+    <script src="scriptCalcular.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Converter Bases</h1>
+        <input type="text" id="numero" placeholder="Digite um número">
+        
+        <div>
+            <label for="base-in">Base de entrada:</label>
+            <select id="base-in">
+                <option value="10">Decimal</option>
+                <option value="2">Binário</option>
+                <option value="8">Octal</option>
+                <option value="16">Hexadecimal</option>
+            </select>
+        </div>
+        
+        <button onclick="converter()">Converter</button>
+        <button onclick="toggleCalculadora()">Calculadora</button>
+        
+        <h2>Resultado da Conversão</h2>
+        <div id="resultado"></div>
+        
+        <!-- Seção da calculadora -->
+        <div class="calculadora" id="calculadora" style="display:none;">
+            <h2>Calculadora Multibase</h2>
+            <input type="text" id="num1" placeholder="Número 1">
+            <input type="text" id="num2" placeholder="Número 2">
+            
+            <div>
+                <label for="base-calculo">Base de Cálculo:</label>
+                <select id="base-calculo">
+                    <option value="2">Binário</option>
+                    <option value="8">Octal</option>
+                    <option value="10">Decimal</option>
+                    <option value="16">Hexadecimal</option>
+                </select>
+            </div>
+            
+            <select id="operacao">
+                <option value="soma">+</option>
+                <option value="subtracao">-</option>
+                <option value="multiplicacao">*</option>
+                <option value="divisao">/</option>
+            </select>
+
+            <button onclick="calcular()">Calcular</button>
+            
+            <h2>Resultado:</h2>
+            <div id="resultadoCalc"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCalculadora() {
+            const calculadora = document.getElementById('calculadora');
+            calculadora.style.display = calculadora.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
